@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: driver-hub-hiring-portal
+    runtime: python
+    plan: free
+    region: oregon
+    buildCommand: pip install -r requirements.txt
+    startCommand: cd Driver_Hub_Backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: DRIVER_HUB_SECRET
+        generateValue: true

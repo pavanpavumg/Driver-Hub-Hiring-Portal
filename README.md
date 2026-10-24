@@ -56,3 +56,26 @@ Open `http://127.0.0.1:5500/` in your browser.
 | **Driver** | `driver@driverhub.com` | `Password123!` |
 | **Employer** | `employer@driverhub.com` | `Password123!` |
 | **Admin** | `admin@driverhub.com` | `Password123!` |
+
+---
+
+## ☁️ Deploy to Render (Free Tier)
+
+This repository includes a `render.yaml` Blueprint for 1-click deployment on [Render](https://render.com/).
+
+### Method 1: Using Render Blueprint (Recommended)
+1. Go to your [Render Dashboard](https://dashboard.render.com/).
+2. Click **New +** > **Blueprint**.
+3. Connect your GitHub repository: `https://github.com/pavanpavumg/Driver-Hub-Hiring-Portal`.
+4. Render will detect `render.yaml` and configure the Web Service automatically.
+5. Click **Apply**. Your app will be live with full backend and frontend in ~2 minutes!
+
+### Method 2: Manual Web Service Setup
+1. On Render, click **New +** > **Web Service**.
+2. Connect `https://github.com/pavanpavumg/Driver-Hub-Hiring-Portal`.
+3. Set the following settings:
+   - **Environment**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `cd Driver_Hub_Backend && uvicorn main:app --host 0.0.0.0 --port $PORT`
+   - **Plan**: `Free`
+4. Click **Create Web Service**.
