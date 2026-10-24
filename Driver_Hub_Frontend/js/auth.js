@@ -2,26 +2,6 @@ import { $, api, run, setSession, state, toast } from "./core.js";
 import { openWorkspaceFor } from "./navigation.js";
 
 export function initializeAuth() {
-  const demoCredentials = {
-    driver: { email: "driver@driverhub.com", password: "Password123!", role: "driver" },
-    employer: { email: "employer@driverhub.com", password: "Password123!", role: "employer" },
-    admin: { email: "admin@driverhub.com", password: "Password123!", role: "admin" }
-  };
-
-  document.querySelectorAll("[data-demo-role]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const role = btn.dataset.demoRole;
-      const creds = demoCredentials[role];
-      if (!creds) return;
-      $("loginEmail").value = creds.email;
-      $("loginPassword").value = creds.password;
-      $("loginRole").value = creds.role;
-      toast(`Selected Demo ${role.toUpperCase()} (${creds.email})`);
-      // Auto-trigger login
-      $("loginForm").requestSubmit();
-    });
-  });
-
   $("loginForm").addEventListener("submit", event => {
     event.preventDefault();
     run(async () => {
