@@ -1645,11 +1645,32 @@ textarea {
   opacity: 0.5;
 }
 
-/* Responsiveness */
+/* ========================================================
+   COMPREHENSIVE MOBILE VIEW POLISH ACROSS ALL PAGES
+   ======================================================== */
+
+@keyframes slideDownNav {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet & Smaller Screens (<= 900px) */
 @media (max-width: 900px) {
   .trust-strip {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+    padding: 22px 5%;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
   }
 
   .benefits-grid {
@@ -1665,7 +1686,7 @@ textarea {
   .employer-cta {
     flex-direction: column;
     align-items: flex-start;
-    padding: 32px 28px;
+    padding: 34px 28px;
   }
 
   .employer-cta-buttons {
@@ -1674,20 +1695,678 @@ textarea {
 
   .employer-cta-buttons .btn {
     width: 100%;
+    justify-content: center;
   }
 }
 
-@media (max-width: 600px) {
-  .trust-strip {
+/* Mobile Screens (<= 768px) */
+@media (max-width: 768px) {
+  /* 1. Global & Header Polish */
+  .site-header {
+    height: 58px;
+    padding: 0 4%;
+  }
+
+  .brand {
+    font-size: 17px;
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    border-radius: 9px;
+  }
+
+  .menu-toggle {
+    display: grid !important;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    font-size: 20px;
+    background: #f3f7f5;
+    color: var(--ink);
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 8px;
+    transition: background 150ms ease;
+  }
+
+  .menu-toggle:hover {
+    background: #e2ede8;
+  }
+
+  .main-nav {
+    display: none;
+    position: fixed !important;
+    top: 58px !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(18px) !important;
+    -webkit-backdrop-filter: blur(18px) !important;
+    border-bottom: 1px solid #dce8e4 !important;
+    box-shadow: 0 16px 36px rgba(18, 44, 36, 0.12) !important;
+    padding: 16px 5% 20px !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 6px !important;
+    z-index: 9999 !important;
+  }
+
+  .main-nav.open {
+    display: flex !important;
+    animation: slideDownNav 200ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  .main-nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ink);
+    border-radius: 10px;
+    border-bottom: 1px solid #f2f6f4;
+  }
+
+  .main-nav a:hover {
+    background: #eef7f3;
+    color: var(--green);
+  }
+
+  .header-actions {
+    gap: 6px;
+  }
+
+  .header-actions .btn {
+    padding: 8px 12px;
+    font-size: 12px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  /* 2. Home Page Mobile Polish */
+  .hero {
     grid-template-columns: 1fr;
+    padding: 24px 4% 28px;
+    gap: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(27px, 7.8vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -1px;
+    margin: 0 0 12px;
+  }
+
+  .hero-text {
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0 0 18px;
+  }
+
+  .search-bar {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(20, 122, 97, 0.08);
+  }
+
+  .search-field {
+    width: 100%;
+    min-height: 44px;
+    padding: 0 10px;
+  }
+
+  .location-field {
+    border-left: none;
+    border-top: 1px solid #edf2f0;
+    padding-top: 6px;
+  }
+
+  .hero-search-btn {
+    width: 100%;
+    height: 46px;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: 2px;
+  }
+
+  .quick-tags-wrap {
+    margin: 12px 0 14px;
+    gap: 8px;
+  }
+
+  .quick-tags {
+    gap: 6px;
+  }
+
+  .quick-tag-btn {
+    padding: 6px 11px;
+    font-size: 11.5px;
+  }
+
+  .hero-meta {
+    flex-direction: column;
+    gap: 6px;
+    font-size: 12px;
+    margin-top: 12px;
+  }
+
+  .hero-art {
+    min-height: 360px;
+    padding: 10px 0 15px;
+    overflow: hidden;
+  }
+
+  .road-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 18px 16px;
+    margin: 0 auto;
+    border-radius: 20px;
+  }
+
+  .floating-card.float-one {
+    top: -5px;
+    right: -5px;
+    padding: 8px 12px;
+    transform: scale(0.85);
+  }
+
+  .floating-card.float-two {
+    bottom: -15px;
+    left: -5px;
+    padding: 8px 12px;
+    transform: scale(0.85);
+  }
+
+  .trust-strip {
+    grid-template-columns: 1fr 1fr;
+    padding: 18px 4%;
+    gap: 12px;
+  }
+
+  .trust-stat {
+    font-size: 20px;
+  }
+
+  .categories-section {
+    padding: 36px 4%;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .category-card {
+    padding: 16px 14px;
+  }
+
+  .cat-icon-box {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .cat-body h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .jobs-preview {
+    padding: 34px 4%;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .section-heading h2 {
+    font-size: 24px;
+  }
+
+  .how-section {
+    padding: 36px 4%;
+  }
+
+  .steps-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .step-card {
+    padding: 20px 18px;
+  }
+
+  .step-icon {
+    width: 44px;
+    height: 44px;
+    font-size: 22px;
+    margin-bottom: 14px;
+  }
+
+  .benefits-section {
+    padding: 34px 4%;
+  }
+
+  .benefit-card {
+    padding: 20px 16px;
+  }
+
+  .employer-cta {
+    margin: 24px 4% 40px;
+    padding: 26px 20px;
+    border-radius: 18px;
+  }
+
+  .employer-cta-text h2 {
+    font-size: 22px;
+  }
+
+  /* 3. Job Board View Polish */
+  .page-view {
+    padding: 22px 4% 48px;
+  }
+
+  .page-intro {
+    margin-bottom: 20px;
+  }
+
+  .page-intro h1 {
+    font-size: 26px;
+    letter-spacing: -0.8px;
+    margin-bottom: 6px;
+  }
+
+  .jobs-layout {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .filter-panel {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .filter-panel .form-label {
+    display: flex !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 12px;
+  }
+
+  .results-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .sort-select {
+    width: 100%;
+    height: 42px;
+    font-size: 13px;
+  }
+
+  .job-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .job-card-title {
+    margin: 12px 0 4px;
+  }
+
+  .job-card-title button {
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  .job-salary {
+    font-size: 16px;
+  }
+
+  .job-card-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 12px;
+    margin-top: 12px;
+  }
+
+  .job-card-actions {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+  }
+
+  .job-card-actions .details-btn {
+    flex: 1;
+    height: 42px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  .job-card-actions .apply-btn {
+    flex: 1.5;
+    height: 42px;
+    justify-content: center;
+    font-size: 12px;
+  }
+
+  /* 4. Job Details Modal Polish */
+  .modal-backdrop {
+    padding: 8px;
+  }
+
+  .modal-card {
+    width: 100%;
+    max-height: 94vh;
+    border-radius: 16px;
+  }
+
+  .modal-header {
+    padding: 18px 18px 12px;
+  }
+
+  .modal-header h2 {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .modal-close {
+    width: 36px;
+    height: 36px;
+  }
+
+  .modal-body {
+    padding: 14px 18px;
+  }
+
+  .modal-meta-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .meta-item strong {
+    font-size: 13px;
+  }
+
+  .modal-footer {
+    padding: 12px 18px;
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+
+  .modal-footer button {
+    width: 100%;
+    height: 44px;
+    justify-content: center;
+  }
+
+  /* 5. Driver Dashboard Mobile Polish */
+  .dashboard-view {
+    padding: 22px 4% 50px;
+  }
+
+  .dashboard-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .dashboard-top h1 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .dashboard-top .btn {
+    width: 100%;
+    height: 44px;
+    justify-content: center;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .stat-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+    grid-template-columns: 36px 1fr;
+    gap: 10px;
+  }
+
+  .stat-card strong {
+    font-size: 20px;
+  }
+
+  .notifications-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .notification-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .notif-action-btn {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .dashboard-columns {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .panel {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  #profileForm .btn[type="submit"] {
+    width: 100%;
+    height: 46px;
+  }
+
+  .application-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px;
+  }
+
+  /* 6. Employer Dashboard Mobile Polish */
+  .employer-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .talent-search-bar {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .talent-search-bar input,
+  .talent-search-bar select,
+  .talent-search-bar button {
+    width: 100%;
+    height: 44px;
+  }
+
+  .talent-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .candidate-card {
+    padding: 14px;
+  }
+
+  .candidate-contact-bar {
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .candidate-contact-bar .btn {
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+  }
+
+  .application-actions {
+    width: 100%;
+    display: flex;
+    gap: 6px;
+  }
+
+  .application-actions .mini-action {
+    flex: 1;
+    height: 38px;
+    justify-content: center;
+    text-align: center;
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+
+  /* 7. Admin Dashboard Mobile Polish */
+  .admin-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .admin-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .admin-row .mini-action,
+  .admin-row .danger-btn {
+    width: 100%;
+    height: 38px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* 8. Auth Screens Mobile Polish */
+  .auth-view {
+    padding: 20px 4%;
+  }
+
+  .auth-card {
+    width: 100%;
+    padding: 22px 16px;
+    border-radius: 16px;
+  }
+
+  .auth-card h1 {
+    font-size: 25px;
+    margin-bottom: 6px;
+  }
+
+  .demo-role-btns {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+
+  .demo-pill-btn {
+    padding: 10px 12px;
+    min-height: 48px;
+  }
+
+  .role-choices {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .role-choice {
+    padding: 12px 14px;
+  }
+
+  .stack-form .btn[type="submit"] {
+    height: 48px;
+    font-size: 15px;
+  }
+
+  /* 9. Footer Mobile Polish */
+  .site-footer {
+    padding: 36px 4% 24px;
   }
 
   .footer-top-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
   }
 
-  .quick-tags-wrap {
+  .footer-col h4 {
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+
+  .footer-col ul {
+    gap: 6px;
+  }
+
+  .footer-col a,
+  .footer-link-btn {
+    padding: 6px 0;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 13.5px;
+  }
+
+  .footer-bottom-bar {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+/* Small Phones (<= 400px) */
+@media (max-width: 400px) {
+  .trust-strip {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .header-actions .btn {
+    padding: 7px 9px;
+    font-size: 11px;
   }
 }
