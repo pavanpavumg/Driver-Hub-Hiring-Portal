@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Driver Hub connects professional drivers with trusted employers.">
+  <title>Driver Hub | Find your next driving job</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="frontend-polish.css">
+</head>
+<body>
+  <div id="headerMount"></div>
+  <main id="mainContent"></main>
+  <div id="footerMount"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <p id="appLoadError" class="load-state is-error" role="alert" hidden></p>
+
+  <!-- Job Details Modal -->
+  <div id="jobModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalJobTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="eyebrow" id="modalJobCategory">CAR DRIVER</span>
+          <h2 id="modalJobTitle">Job Title</h2>
+          <p id="modalJobCompany">Company · Location</p>
+        </div>
+        <button type="button" class="modal-close" id="modalCloseBtn" aria-label="Close details">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta-grid">
+          <div class="meta-item"><span class="meta-label">Monthly Salary</span><strong id="modalJobSalary">₹0</strong></div>
+          <div class="meta-item"><span class="meta-label">Experience Required</span><strong id="modalJobExp">0 yrs</strong></div>
+          <div class="meta-item"><span class="meta-label">Working Hours</span><strong id="modalJobHours">Regular</strong></div>
+          <div class="meta-item"><span class="meta-label">Location</span><strong id="modalJobLocation">City</strong></div>
+        </div>
+        <div class="modal-section">
+          <h3>Required Documents & Licences</h3>
+          <p id="modalJobDocs" class="modal-text">Details</p>
+        </div>
+        <div class="modal-section">
+          <h3>Job Description & Responsibilities</h3>
+          <p id="modalJobDesc" class="modal-text">Details</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-plain" id="modalDismissBtn">Close</button>
+        <button type="button" class="btn btn-primary" id="modalApplyBtn">Apply for this Job <span>→</span></button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js?v=2"></script>
+
+</body>
+</html>

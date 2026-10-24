@@ -1,0 +1,49 @@
+<section id="view-driver" class="view dashboard-view">
+  <div class="dashboard-top">
+    <div><span class="eyebrow">DRIVER WORKSPACE</span><h1 id="driverWelcome">Welcome back!</h1><p>Manage your profile and keep your job search moving.</p></div>
+    <button class="btn btn-primary" type="button" data-view="jobs">Find a job <span>→</span></button>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><span class="stat-icon" aria-hidden="true">✉</span><span>Applications sent</span><strong id="applicationStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon" aria-hidden="true">★</span><span>Shortlisted</span><strong id="shortlistStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon" aria-hidden="true">◉</span><span>Profile status</span><strong id="profileStatus" class="stat-word">In progress</strong></div>
+  </div>
+
+  <!-- Real-time Relevant Job Opportunities & Alerts -->
+  <div class="notifications-card" id="driverNotificationsBox">
+    <div class="notifications-header">
+      <div class="notifications-title">
+        <span class="live-dot"></span>
+        <h3>Relevant Job Opportunities & Real-time Alerts</h3>
+      </div>
+      <span class="notification-pill" id="notificationCount">2 matched</span>
+    </div>
+    <div id="driverNotificationList" class="notification-list"></div>
+  </div>
+
+  <div class="dashboard-columns">
+
+    <section class="panel">
+      <div class="panel-heading"><div><h2>My profile</h2><p>Help employers understand your experience.</p></div><span class="status-chip">Candidate</span></div>
+      <form id="profileForm" class="stack-form two-col">
+        <label class="form-label">Full name<input id="profileName" class="input" required minlength="2" autocomplete="name"></label>
+        <label class="form-label">Phone number<input id="profilePhone" class="input" type="tel" required minlength="7" autocomplete="tel"></label>
+        <label class="form-label">Preferred location<input id="profileLocation" class="input" placeholder="Bengaluru" autocomplete="address-level2"></label>
+        <label class="form-label">Driver category<select id="profileCategory" class="input"><option>Car Driver</option><option>Delivery Driver</option><option>Heavy Vehicle</option><option>Cab Driver</option><option>School Bus Driver</option></select></label>
+        <label class="form-label">Years of experience<input id="profileExperience" class="input" type="number" min="0" max="60" value="0"></label>
+        <label class="form-label">Licence category<input id="profileLicence" class="input" placeholder="LMV / HMV"></label>
+        <label class="form-label span-two">Skills and additional details<textarea id="profileSkills" class="input textarea" placeholder="Safe driving, route knowledge, punctuality..."></textarea></label>
+        <label class="form-label span-two">Upload resume / documents
+          <input id="profileFile" class="input file-input" type="file" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+          <small class="field-help">Filename only in this MVP; document contents are not uploaded.</small>
+          <span id="fileName" class="field-help"></span>
+        </label>
+        <button class="btn btn-primary span-two" type="submit">Save profile</button>
+      </form>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>My applications</h2><p>Check the latest status of your applications.</p></div><button class="small-link" type="button" data-view="jobs">Browse jobs</button></div>
+      <div id="myApplications" class="application-list"></div>
+    </section>
+  </div>
+</section>

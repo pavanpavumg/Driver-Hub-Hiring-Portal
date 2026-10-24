@@ -1,0 +1,22 @@
+<section id="view-register" class="view auth-view">
+  <div class="auth-card wide">
+    <a class="brand auth-brand" href="#" data-view="home"><span class="brand-mark">DH</span><span>Driver<span class="brand-accent">Hub</span></span></a>
+    <span class="eyebrow">GET STARTED</span>
+    <h1>Create your account</h1>
+    <p>Choose how you want to use Driver Hub.</p>
+    <div class="role-choices">
+      <button class="role-choice selected" type="button" data-role="driver"><span>🚗</span><b>I'm a driver</b><small>Find jobs and manage applications</small></button>
+      <button class="role-choice" type="button" data-role="employer"><span>🏢</span><b>I'm an employer</b><small>Post jobs and find candidates</small></button>
+    </div>
+    <form id="registerForm" class="stack-form two-col">
+      <label class="form-label">Full name<input class="input" id="regName" required placeholder="Your full name"></label>
+      <label class="form-label">Email address<input class="input" id="regEmail" type="email" required placeholder="you@example.com"></label>
+      <label class="form-label">Phone number<input class="input" id="regPhone" type="tel" required placeholder="+91 98765 43210"></label>
+      <label class="form-label">Password<input class="input" id="regPassword" type="password" minlength="8" required placeholder="At least 8 characters"></label>
+      <label id="companyField" class="form-label hidden">Company name<input class="input" id="regCompany" placeholder="Your company"></label>
+      <button class="btn btn-primary full-width span-two" type="submit">Create account <span>→</span></button>
+    </form>
+    <p class="auth-switch">Already have an account? <button class="inline-link" type="button" data-view="login">Log in</button></p>
+    <div class="demo-note">Your account is stored by the Driver Hub backend.</div>
+  </div>
+</section>

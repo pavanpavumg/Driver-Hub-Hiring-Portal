@@ -1,0 +1,59 @@
+<section id="view-employer" class="view dashboard-view">
+  <div class="dashboard-top">
+    <div><span class="eyebrow">EMPLOYER WORKSPACE</span><h1>Hire the right driver</h1><p>Post a vacancy and manage your candidate applications.</p></div>
+    <button class="btn btn-primary" type="button" id="focusPostJob">＋ Post a job</button>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><span class="stat-icon">📋</span><span>Active job posts</span><strong id="employerJobsStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">👥</span><span>Applications received</span><strong id="employerAppsStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">⭐</span><span>Shortlisted</span><strong id="employerShortlistStat">0</strong></div>
+  </div>
+  <div class="dashboard-columns employer-columns">
+    <section class="panel" id="postJobPanel">
+      <div class="panel-heading"><div><h2>Post a driver vacancy</h2><p>Provide clear details so the right candidates can apply.</p></div></div>
+      <form id="jobForm" class="stack-form two-col">
+        <label class="form-label">Job title<input class="input" id="jobTitle" required placeholder="e.g. Delivery Driver"></label>
+        <label class="form-label">Driver category<select class="input" id="jobCategory"><option>Car Driver</option><option>Delivery Driver</option><option>Heavy Vehicle</option><option>Cab Driver</option><option>School Bus Driver</option></select></label>
+        <label class="form-label">Company name<input class="input" id="jobCompany" required placeholder="Company name"></label>
+        <label class="form-label">Location<input class="input" id="jobLocation" required placeholder="e.g. Bengaluru"></label>
+        <label class="form-label">Monthly salary (₹)<input class="input" id="jobSalary" type="number" min="0" required placeholder="25000"></label>
+        <label class="form-label">Experience required<select class="input" id="jobExperience"><option value="0">Fresher / Any</option><option value="1">1+ year</option><option value="2">2+ years</option><option value="3">3+ years</option><option value="5">5+ years</option></select></label>
+        <label class="form-label">Working hours<input class="input" id="jobHours" required placeholder="e.g. 9 hours / day"></label>
+        <label class="form-label">Required documents<input class="input" id="jobDocuments" placeholder="Driving licence, ID proof"></label>
+        <label class="form-label span-two">Job description<textarea class="input textarea" id="jobDescription" required placeholder="Responsibilities, route details, benefits..."></textarea></label>
+        <button class="btn btn-primary span-two" type="submit">Publish job <span>→</span></button>
+      </form>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>Your job posts</h2><p>Manage vacancies and review applicants.</p></div></div>
+      <div id="employerJobList" class="application-list"></div>
+      <div class="divider-line"></div>
+      <div class="panel-heading"><div><h2>Recent applications</h2><p>Shortlist candidates for follow-up.</p></div></div>
+      <div id="employerApplications" class="application-list"></div>
+    </section>
+
+    <!-- Search / View Suitable Driver Profiles (Talent Pool) -->
+    <section class="panel talent-pool-panel span-two">
+      <div class="panel-heading">
+        <div>
+          <h2>Search & Browse Driver Talent Pool</h2>
+          <p>Directly explore verified driver candidate profiles, skills, and licences.</p>
+        </div>
+        <div class="talent-search-bar">
+          <input id="talentLocation" class="input" placeholder="City or location (e.g. Bengaluru)">
+          <select id="talentCategory" class="input">
+            <option value="">All Categories</option>
+            <option>Car Driver</option>
+            <option>Delivery Driver</option>
+            <option>Heavy Vehicle</option>
+            <option>Cab Driver</option>
+            <option>School Bus Driver</option>
+          </select>
+          <button id="talentSearchBtn" class="btn btn-primary" type="button">Search Candidates</button>
+        </div>
+      </div>
+      <div id="candidatePoolList" class="talent-grid"></div>
+    </section>
+  </div>
+</section>
+

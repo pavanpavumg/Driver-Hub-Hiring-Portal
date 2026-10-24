@@ -1,0 +1,33 @@
+<section id="view-login" class="view auth-view">
+  <div class="auth-card">
+    <a class="brand auth-brand" href="#" data-view="home"><span class="brand-mark">DH</span><span>Driver<span class="brand-accent">Hub</span></span></a>
+    <span class="eyebrow">WELCOME BACK</span>
+    <h1>Log in to Driver Hub</h1>
+    <p>Continue your journey with us.</p>
+    <div class="demo-login-box">
+      <span class="demo-box-title">⚡ 1-Click Demo Login:</span>
+      <div class="demo-role-btns">
+        <button type="button" class="demo-pill-btn" data-demo-role="driver" title="Login as Ravi Kumar (Verified Driver)">
+          👨‍✈️ <b>Driver</b>
+          <small>driver@driverhub.com</small>
+        </button>
+        <button type="button" class="demo-pill-btn" data-demo-role="employer" title="Login as SwiftKart Logistics (Fleet Employer)">
+          🏢 <b>Employer</b>
+          <small>employer@driverhub.com</small>
+        </button>
+        <button type="button" class="demo-pill-btn" data-demo-role="admin" title="Login as Platform Administrator">
+          🛡️ <b>Admin</b>
+          <small>admin@driverhub.com</small>
+        </button>
+      </div>
+    </div>
+    <form id="loginForm" class="stack-form">
+      <label class="form-label">Email address<input class="input" type="email" id="loginEmail" placeholder="you@example.com" required></label>
+      <label class="form-label">Password<input class="input" type="password" id="loginPassword" placeholder="Enter your password" required minlength="8"></label>
+      <label class="form-label">Continue as<select class="input" id="loginRole"><option value="driver">Driver / Candidate</option><option value="employer">Employer</option><option value="admin">Admin</option></select></label>
+      <button class="btn btn-primary full-width" type="submit">Log in <span>→</span></button>
+    </form>
+    <p class="auth-switch">New to Driver Hub? <button class="inline-link" type="button" data-view="register">Create an account</button></p>
+    <div class="demo-note"><strong>Demo Credentials:</strong> Password for all demo accounts is <code>Password123!</code>. Click any role button above to auto-fill and test immediately.</div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+<section id="view-admin" class="view dashboard-view">
+  <div class="dashboard-top">
+    <div><span class="eyebrow">ADMIN CONSOLE</span><h1>Platform overview</h1><p>Basic administration tools for the Driver Hub prototype.</p></div>
+    <span class="status-chip">Demo admin</span>
+  </div>
+  <div class="stats-grid admin-stats-grid">
+    <div class="stat-card"><span class="stat-icon">👥</span><span>Total Accounts</span><strong id="adminUsersStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">👨🏽‍✈️</span><span>Drivers</span><strong id="adminDriversStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">🏢</span><span>Employers</span><strong id="adminEmployersStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">📋</span><span>Job Postings</span><strong id="adminJobsStat">0</strong></div>
+    <div class="stat-card"><span class="stat-icon">📨</span><span>Applications</span><strong id="adminAppsStat">0</strong></div>
+  </div>
+
+  <div class="dashboard-columns">
+    <!-- Candidates Management -->
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Manage Candidates (Drivers)</h2>
+          <p>Review registered drivers and manage account access status.</p>
+        </div>
+        <span class="status-chip" id="adminDriverCount">0 drivers</span>
+      </div>
+      <div id="adminCandidateList" class="admin-job-list"></div>
+    </section>
+
+    <!-- Employers Management -->
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Manage Employers (Companies)</h2>
+          <p>Review registered hiring companies and moderate platform access.</p>
+        </div>
+        <span class="status-chip" id="adminEmployerCount">0 employers</span>
+      </div>
+      <div id="adminEmployerList" class="admin-job-list"></div>
+    </section>
+  </div>
+
+  <div class="dashboard-columns" style="margin-top: 20px;">
+    <!-- Job Postings Moderation -->
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Manage Job Postings</h2>
+          <p>Review, verify, and moderate active driver vacancies.</p>
+        </div>
+      </div>
+      <div id="adminJobList" class="admin-job-list"></div>
+    </section>
+
+    <!-- Applications Management -->
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Platform Applications Overview</h2>
+          <p>Track all driver applications submitted across jobs.</p>
+        </div>
+      </div>
+      <div id="adminApplicationList" class="admin-job-list"></div>
+    </section>
+  </div>
+</section>

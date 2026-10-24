@@ -1,0 +1,21 @@
+<section id="view-jobs" class="view page-view">
+  <div class="page-intro"><span class="eyebrow">JOB BOARD</span><h1>Find your next driving job</h1><p>Search opportunities and find a role that fits your experience.</p></div>
+  <div class="jobs-layout">
+    <aside class="filter-panel">
+      <div class="filter-title"><h3>Filter jobs</h3><button id="clearFilters" class="small-link" type="button">Clear all</button></div>
+      <label class="form-label">Keyword<input id="filterKeyword" class="input" type="search" placeholder="e.g. delivery driver"></label>
+      <label class="form-label">Location<input id="filterLocation" class="input" type="search" placeholder="e.g. Bengaluru"></label>
+      <label class="form-label">Driver category<select id="filterCategory" class="input"><option value="">All categories</option><option>Car Driver</option><option>Delivery Driver</option><option>Heavy Vehicle</option><option>Cab Driver</option><option>School Bus Driver</option></select></label>
+      <label class="form-label">Minimum salary<select id="filterSalary" class="input"><option value="0">Any salary</option><option value="15000">₹15,000+</option><option value="20000">₹20,000+</option><option value="25000">₹25,000+</option><option value="30000">₹30,000+</option></select></label>
+      <button id="applyFilters" class="btn btn-primary full-width" type="button">Apply filters</button>
+    </aside>
+    <div class="job-results">
+      <div class="results-heading">
+        <span id="resultsCount" role="status" aria-live="polite">Loading jobs…</span>
+        <select id="sortJobs" class="sort-select" aria-label="Sort jobs"><option value="recent">Most recent</option><option value="salary">Highest salary</option></select>
+      </div>
+      <div id="allJobs" class="job-list" aria-busy="false"></div>
+      <div id="emptyJobs" class="empty-state hidden"><div aria-hidden="true">⌕</div><h3>No jobs found</h3><p>Try changing your search or clearing a filter.</p></div>
+    </div>
+  </div>
+</section>
